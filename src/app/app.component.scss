@@ -1,0 +1,98 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.app-toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+  background: color-mix(in srgb, var(--mat-sys-surface-container) 92%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.version-label {
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.page {
+  display: grid;
+  min-height: calc(100dvh - 64px);
+  box-sizing: border-box;
+  place-items: center;
+  padding: clamp(24px, 7vw, 80px);
+}
+
+.welcome-card {
+  width: min(100%, 680px);
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 28%, transparent);
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--mat-sys-primary-container) 24%, transparent),
+      transparent 48%
+    ),
+    var(--mat-sys-surface-container-low);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+}
+
+mat-card-header {
+  padding: 28px 28px 8px;
+}
+
+mat-card-title {
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+mat-card-subtitle {
+  margin-top: 10px;
+}
+
+mat-card-content {
+  padding: 20px 28px 8px;
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+mat-card-actions {
+  padding: 16px 28px 28px;
+}
+
+p.error {
+  color: var(--mat-sys-error);
+}
+
+input.error {
+  border: 1px solid var(--mat-sys-error);
+}
+
+@media (max-width: 599px) {
+  .app-toolbar {
+    min-height: 56px;
+  }
+
+  .version-label {
+    display: none;
+  }
+
+  .page {
+    min-height: calc(100dvh - 56px);
+    padding: 20px;
+  }
+}

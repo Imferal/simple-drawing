@@ -1,1 +1,27 @@
-<h1>{{ title }}</h1>
+<mat-toolbar class="app-toolbar">
+  <span class="brand">Angular Paint</span>
+  <span class="toolbar-spacer"></span>
+  <span class="version-label">Angular {{ angularVersion }} + Material</span>
+</mat-toolbar>
+
+<main class="page">
+  <mat-card appearance="outlined" class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>Всё готово к работе</mat-card-title>
+      <mat-card-subtitle>Спокойная тёмная тема включена по умолчанию</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        Проект обновлён до Angular 22, а компоненты Angular Material уже доступны
+        в корневом модуле.
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a mat-flat-button href="https://material.angular.dev/" target="_blank" rel="noreferrer">
+        Документация Material
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</main>
