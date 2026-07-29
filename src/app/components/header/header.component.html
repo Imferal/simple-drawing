@@ -1,0 +1,82 @@
+<mat-toolbar class="header">
+  <div class="menu">
+    <!-- Главная панель навигации / меню -->
+    <button mat-button [matMenuTriggerFor]="file">File</button>
+    <button mat-button [matMenuTriggerFor]="brush">Brush</button>
+    <button mat-button [matMenuTriggerFor]="canvas">Canvas</button>
+
+    <button mat-button>
+      Undo
+    </button>
+
+    <button mat-button>
+      Redo
+    </button>
+
+    <!-- Меню первого уровня -->
+    <mat-menu #file="matMenu">
+      <button mat-menu-item (click)="logAction('New Image')">New</button>
+      <button mat-menu-item (click)="logAction('Save Canvas')">Save Canvas</button>
+      <button mat-menu-item (click)="logAction('Load Canvas')">Load Canvas</button>
+      <button mat-menu-item (click)="logAction('Export as PNG')">Export as png</button>
+    </mat-menu>
+
+    <mat-menu #brush="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="brushSize">Size</button>
+      <button mat-menu-item [matMenuTriggerFor]="brushColor">Color</button>
+    </mat-menu>
+
+    <mat-menu #canvas="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="canvasSize">Size</button>
+      <button mat-menu-item [matMenuTriggerFor]="canvasColor">Color</button>
+    </mat-menu>
+
+    <!-- Подменю: Размеры кисти -->
+    <mat-menu #brushSize="matMenu">
+      <button mat-menu-item (click)="logBrushSize(1)">1</button>
+      <button mat-menu-item (click)="logBrushSize(2)">2</button>
+      <button mat-menu-item (click)="logBrushSize(4)">4</button>
+      <button mat-menu-item (click)="logBrushSize(6)">6</button>
+      <button mat-menu-item (click)="logBrushSize(10)">10</button>
+      <button mat-menu-item (click)="logBrushSize(25)">25</button>
+      <button mat-menu-item (click)="logBrushSize(50)">50</button>
+      <button mat-menu-item (click)="logBrushSize(100)">100</button>
+      <button mat-menu-item (click)="logBrushSize(300)">300</button>
+    </mat-menu>
+
+    <!-- Подменю: Цвета кисти -->
+    <mat-menu #brushColor="matMenu">
+      <button mat-menu-item (click)="logBrushColor('#000000')">Black</button>
+      <button mat-menu-item (click)="logBrushColor('#FFFFFF')">White</button>
+      <button mat-menu-item (click)="logBrushColor('#FF0000')">Red</button>
+      <button mat-menu-item (click)="logBrushColor('#FF9900')">Orange</button>
+      <button mat-menu-item (click)="logBrushColor('#FFF400')">Yellow</button>
+      <button mat-menu-item (click)="logBrushColor('#00FF00')">Green</button>
+      <button mat-menu-item (click)="logBrushColor('#0000FF')">Blue</button>
+      <button mat-menu-item (click)="logBrushColor('#A000FF')">Purple</button>
+    </mat-menu>
+
+    <!-- Подменю: Размеры холста (было пропущено в триггерах, теперь подключено) -->
+    <mat-menu #canvasSize="matMenu">
+      <button mat-menu-item (click)="logCanvasSize(150, 150)">150 x 150</button>
+      <button mat-menu-item (click)="logCanvasSize(200, 300)">200 x 300</button>
+      <button mat-menu-item (click)="logCanvasSize(400, 600)">400 x 600</button>
+      <button mat-menu-item (click)="logCanvasSize(800, 1200)">800 x 1200</button>
+    </mat-menu>
+
+    <!-- Подменю: Цвета холста -->
+    <mat-menu #canvasColor="matMenu">
+      <button mat-menu-item (click)="logCanvasColor('#000000')">Black</button>
+      <button mat-menu-item (click)="logCanvasColor('#FFFFFF')">White</button>
+      <button mat-menu-item (click)="logCanvasColor('#FF0000')">Red</button>
+      <button mat-menu-item (click)="logCanvasColor('#FF9900')">Orange</button>
+      <button mat-menu-item (click)="logCanvasColor('#FFF400')">Yellow</button>
+      <button mat-menu-item (click)="logCanvasColor('#00FF00')">Green</button>
+      <button mat-menu-item (click)="logCanvasColor('#0000FF')">Blue</button>
+      <button mat-menu-item (click)="logCanvasColor('#A000FF')">Purple</button>
+    </mat-menu>
+  </div>
+
+  <span class="toolbar-spacer"></span>
+  <span class="name">Angular Paint</span>
+</mat-toolbar>

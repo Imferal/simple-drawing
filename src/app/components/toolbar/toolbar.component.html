@@ -1,0 +1,36 @@
+<section class="toolbar" aria-labelledby="tools-heading">
+
+  <!-- Выбор цвета кисти -->
+  <div class="toolbar__row">
+    <span class="mat-body-medium color-label">Color from the palette</span>
+
+    <input type="color"
+           id="brushColor"
+           [value]="tools.toolsState().color"
+           (change)="setColor($event)">
+  </div>
+
+  <!-- Выбор размера кисти -->
+  <div class="toolbar__row">
+    <label for="brushSize" class="mat-body-medium size-label">Brush size</label>
+
+    <mat-form-field appearance="outline" class="size-input">
+      <mat-label>px</mat-label>
+
+      <input matInput
+             type="number"
+             id="brushSize"
+             min="1"
+             max="300"
+             [value]="tools.toolsState().size"
+             (change)="setSize($event)">
+    </mat-form-field>
+
+    <!-- Ползунок для удобной регулировки -->
+    <mat-slider min="1" max="300" step="1" class="size-slider">
+      <input matSliderThumb
+             [value]="tools.toolsState().size"
+             (input)="setSize($event)">
+    </mat-slider>
+  </div>
+</section>
