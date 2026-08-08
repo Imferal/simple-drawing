@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ToolsStateService } from '../../services/tools-state/tools-state.service';
 import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
 import { MatSlider, MatSliderThumb } from '@angular/material/slider';
+import { HexColor } from '../../model/tools-state.model';
 
 @Component({
   selector: 'app-toolbar',

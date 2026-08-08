@@ -1,4 +1,5 @@
 import { Injectable, signal } from '@angular/core';
+import { HexColor, ToolsState } from '../../model/tools-state.model';
 
 @Injectable()
 export class ToolsStateService {

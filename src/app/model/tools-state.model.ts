@@ -1,6 +1,6 @@
-type HexColor = `#${string}`;
+export type HexColor = `#${string}`;
 
-interface ToolsState {
+export interface ToolsState {
   color: HexColor,
   size: number,
 }
